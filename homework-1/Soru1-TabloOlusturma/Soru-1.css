@@ -1,0 +1,37 @@
+
+
+*{
+    font-family: "Open Sans" , Arial, Helvetica, sans-serif;
+}
+table,tr,td,th{
+    border:2px solid #666
+}
+td{
+    padding: 5px;
+    width: 200px;
+   
+}
+table{
+    /*Çizgileri düzeltti*/
+    border-collapse: collapse;
+}
+/*tr'lerin içindeki td'lerin 3. 'sü
+Yani comple bir satırı seçebiliriz
+*/
+
+
+tr td:nth-child(3){
+    text-align: center;
+}
+
+tbody tr:nth-child(odd){
+    background-color:azure;
+}
+tbody tr:nth-child(even){
+    background-color:darkgrey;
+}
+
+
+tbody tr:hover{
+    background-color: red;
+}
