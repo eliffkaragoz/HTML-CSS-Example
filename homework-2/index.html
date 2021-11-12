@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <title>AJAX EXAMPLE</title>
+</head>
+<body>
+    <h2>Ogrenciye Tiklandiginda Bilgilerin Ekrana Getirilmesi</h2>
+
+    <p id="demo1"></p>
+    <table id="elitable" border=1 bordercolor="Black" >
+        <tr>
+            <th width="150">Numara</th>
+            
+            <th width="100">AdSoyad</th>
+        </tr>
+        <tr>
+            <td>1111</td>
+            <td>Duygu AKŞEHİR</td>
+        </tr>
+        <tr>
+            <td>2222</td>
+            <td>Ayşe ÇALIŞKAN</td>
+        </tr>
+        <tr>
+            <td>3333</td>
+            <td>Semih ARSLAN</td>
+        </tr>
+        <tr>
+            <td>4444</td>
+            <td>Mehmet ERKOÇ</td>
+        </tr>
+    </table>
+
+    <p id="demo2">Şekil 10: Anasayfa İçeriği</p>
+    <script>
+       document.querySelector('#elitable').onclick = function(ev) {
+               
+                var rowIndex = ev.target.parentElement.rowIndex;
+                loadDoc(rowIndex-1);
+        }
+       
+       
+
+
+
+    
+
+        function loadDoc(rowIndex){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status ==200){
+              
+                    var i , x,sonuc;
+                    xmlDoc = this.responseXML;
+                    x= xmlDoc.getElementsByTagName("student");
+
+                        sonuc1 = "<p> Numarası:" +  x[rowIndex].getElementsByTagName("number")[0].childNodes[0].nodeValue+ "<br>" +  
+                        "AdSoyad : " +x[rowIndex].getElementsByTagName("name")[0].childNodes[0].nodeValue+ "<br>" + 
+                        "Bolum : " +x[rowIndex].getElementsByTagName("department")[0].childNodes[0].nodeValue+ "<br>" + 
+                        "Sınıfı : " +x[rowIndex].getElementsByTagName("grade")[0].childNodes[0].nodeValue+ "<br>" + "</p>";
+                        sonuc2 = "<p> Şekil 11: Öğrenciye Tıklandığındaki Sayfa Görünümü</p>"
+                    document.querySelector("#demo1").innerHTML=sonuc1;
+                    document.querySelector("#demo2").innerHTML=sonuc2;
+                }
+            };
+            xhttp.open("GET","catalog.xml", true);
+            xhttp.send();
+        }
+        
+       
+    </script>
+</body>
+</html>

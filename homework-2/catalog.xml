@@ -1,0 +1,29 @@
+<catalog>
+    <student>
+        <name>Duygu AKŞEHİR</name>
+        <number>111111</number>
+        <grade> 4</grade>
+        <department>Bilgisayar Mühendisliği </department>
+    </student>
+
+    <student>
+        <name>Ayşe ÇALIŞKAN</name>
+        <number>222222</number>
+        <grade> 3</grade>
+        <department>Kimya Mühendisliği </department>
+    </student>
+
+    <student>
+        <name>Semih ARSLAN</name>
+        <number>333333</number>
+        <grade> 1</grade>
+        <department>İnşaat Mühendisliği </department>
+    </student>
+    
+    <student>
+        <name>Mehmet Erkoç</name>
+        <number>444444</number>
+        <grade> 4</grade>
+        <department>Elektrik-Elektronik Mühendisliği </department>
+    </student>
+</catalog>
