@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Product</title>
+<style>
+
+h1 {
+  background-color: #f2f2f2;
+  color: #6A5ACD;
+}
+</style>
+</head>
+<body>
+    <div align="center">
+        <h1>Yeni Ürün Ekle</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${product}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Ürün İsmi:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                </tr>
+                <tr>
+                    <td>Markası:</td>
+                    <td><input type="text" th:field="*{brand}" /></td>
+                </tr>
+                <tr>
+                    <td>Üretim Yeri:</td>
+                    <td><input type="text" th:field="*{madein}" /></td>
+                </tr>
+                <tr>
+                    <td>Fiyatı:</td>
+                    <td><input type="text" th:field="*{price}" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button style="background-color: #6A5ACD ;" type="submit">Kaydet</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
